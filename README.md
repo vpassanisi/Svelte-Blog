@@ -1,3 +1,11 @@
+# Blog
+
+This is a personal blog for writing about audio, music, and sound related topics.
+
+The text content is stored on a separate github repository and the page makes a fetch request to the raw content api for the text file. The text is parsed and added to the DOM using a basic implementation of the CommonMark markdown standard. Read the CommonMark spec [here](https://spec.commonmark.org/0.29/)
+
+The parser also adds basic styling to the elements that it creates. This way the content for the website can easily be edited or updated by anyone, and they do not necessarily need to be able to write html or css
+
 # svelte-tailwindcss-template
 
 This is a starter template using Svelte and TailwindCSS.
@@ -17,7 +25,6 @@ I also included svelte-media because it is so usefull for making mobile friendly
 Install the dependencies...
 
 ```bash
-cd svelte-app
 npm install
 ```
 
