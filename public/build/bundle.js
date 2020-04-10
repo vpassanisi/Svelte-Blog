@@ -2662,6 +2662,22 @@ var app = (function () {
     	post.appendChild(el);
     };
 
+    const h2 = line => {
+    	const el = document.createElement("h2");
+    	el.innerHTML = line.slice(2);
+    	el.classList.add("text-3xl", "font-hairline");
+    	const post = document.getElementById("post");
+    	post.appendChild(el);
+    };
+
+    const h3 = line => {
+    	const el = document.createElement("h3");
+    	el.innerHTML = line.slice(2);
+    	el.classList.add("text-2xl", "font-hairline");
+    	const post = document.getElementById("post");
+    	post.appendChild(el);
+    };
+
     const h4 = line => {
     	const el = document.createElement("h4");
     	el.innerHTML = line.slice(5);
@@ -2704,6 +2720,18 @@ var app = (function () {
     			return newLine = 0;
     		}
 
+    		if (line.startsWith("## ")) {
+    			doc.push(line);
+    			canPush = false;
+    			return newLine = 0;
+    		}
+
+    		if (line.startsWith("### ")) {
+    			doc.push(line);
+    			canPush = false;
+    			return newLine = 0;
+    		}
+
     		if (line.startsWith("#### ")) {
     			doc.push(line);
     			canPush = false;
@@ -2739,6 +2767,8 @@ var app = (function () {
 
     	doc.forEach((line, index) => {
     		if (line.startsWith("# ")) return h1(line);
+    		if (line.startsWith("## ")) return h2(line);
+    		if (line.startsWith("### ")) return h3(line);
     		if (line.startsWith("#### ")) return h4(line);
     		if (line.match(/^-{3,}/) || line.match(/^\s{0,3}\*{3,}/)) return hr();
     		p(line);
@@ -2762,7 +2792,7 @@ var app = (function () {
     			attr_dev(div0, "class", div0_class_value = "" + (null_to_empty(`bg-img ${/*$media*/ ctx[0].lg ? "bg-fixed" : ""} bg-cover bg-no-repeat bg-center w-full h-50vh`) + " svelte-1ibiv58"));
     			add_location(div0, file$4, 25, 0, 987);
     			attr_dev(div1, "id", "post");
-    			attr_dev(div1, "class", "dark:text-white mx-auto pt-24 w-90p max-w-screen-lg");
+    			attr_dev(div1, "class", "dark:text-white mx-auto py-24 w-90p max-w-screen-lg");
     			add_location(div1, file$4, 27, 0, 1093);
     		},
     		l: function claim(nodes) {

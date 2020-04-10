@@ -25,4 +25,4 @@
 
 <div
   class={`bg-img ${$media.lg ? 'bg-fixed' : ''} bg-cover bg-no-repeat bg-center w-full h-50vh`} />
-<div id="post" class="dark:text-white mx-auto pt-24 w-90p max-w-screen-lg" />
+<div id="post" class="dark:text-white mx-auto py-24 w-90p max-w-screen-lg" />

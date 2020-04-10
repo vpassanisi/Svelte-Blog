@@ -8,6 +8,24 @@
     post.appendChild(el);
   };
 
+  export const h2 = line => {
+    const el = document.createElement("h2");
+    el.innerHTML = line.slice(2);
+    el.classList.add("text-3xl", "font-hairline");
+
+    const post = document.getElementById("post");
+    post.appendChild(el);
+  };
+
+  export const h3 = line => {
+    const el = document.createElement("h3");
+    el.innerHTML = line.slice(2);
+    el.classList.add("text-2xl", "font-hairline");
+
+    const post = document.getElementById("post");
+    post.appendChild(el);
+  };
+
   export const h4 = line => {
     const el = document.createElement("h4");
     el.innerHTML = line.slice(5);
@@ -48,6 +66,16 @@
         return (newLine += 1);
       }
       if (line.startsWith("# ")) {
+        doc.push(line);
+        canPush = false;
+        return (newLine = 0);
+      }
+      if (line.startsWith("## ")) {
+        doc.push(line);
+        canPush = false;
+        return (newLine = 0);
+      }
+      if (line.startsWith("### ")) {
         doc.push(line);
         canPush = false;
         return (newLine = 0);
@@ -94,7 +122,8 @@
 
     doc.forEach((line, index) => {
       if (line.startsWith("# ")) return h1(line);
-
+      if (line.startsWith("## ")) return h2(line);
+      if (line.startsWith("### ")) return h3(line);
       if (line.startsWith("#### ")) return h4(line);
 
       if (line.match(/^-{3,}/) || line.match(/^\s{0,3}\*{3,}/)) return hr();
