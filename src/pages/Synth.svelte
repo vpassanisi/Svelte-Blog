@@ -1377,6 +1377,6 @@
 
 </div>
 
-<svelte:window
+<!-- <svelte:window
   on:keydown={event => handleKeyDown(event)}
-  on:keyup={event => handleKeyUp(event)} />
+  on:keyup={event => handleKeyUp(event)} /> -->
