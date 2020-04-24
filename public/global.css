@@ -45,3 +45,7 @@
 .text-indent {
   text-indent: 4rem;
 }
+
+.min-content {
+  width: min-content;
+}

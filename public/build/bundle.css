@@ -2,5 +2,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 .bg-img.svelte-njnria{background-image:url("../images/landing.jpg")}
 .will-change-height.svelte-15q160i{will-change:height}
 .bg-img.svelte-1ibiv58{background-image:url("https://source.unsplash.com/z__6D7KbX-k/1600x900")}
+.bg-img.svelte-4xzh8u{background-image:url("https://source.unsplash.com/4O1e7F2qjGM/1600x700")}
+.range-knob.svelte-o9bi2k:after{content:"";display:block;position:absolute;width:4px;height:0.7rem;top:0;left:1.1rem;background:#111}.selector.svelte-o9bi2k{-webkit-appearance:slider-vertical}.selector.svelte-o9bi2k::-webkit-slider-thumb{-webkit-appearance:none;appearance:none}input.svelte-o9bi2k::-webkit-outer-spin-button,input.svelte-o9bi2k::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}input[type="number"].svelte-o9bi2k{-moz-appearance:textfield}.black-keys.svelte-o9bi2k{margin:-97px -24px 0 -24px}.min-content.svelte-o9bi2k{min-width:-webkit-fit-content;min-width:-moz-fit-content;min-width:fit-content}
 
 /*# sourceMappingURL=bundle.css.map */

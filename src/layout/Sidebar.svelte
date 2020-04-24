@@ -9,11 +9,12 @@
 
 {#if show}
   <button
-    class="fixed top-0 left-0 w-full h-full bg-black-alpha-40 cursor-default"
+    class="fixed top-0 left-0 w-full h-full bg-black-alpha-40 cursor-default
+    z-20"
     on:click={() => sidebarToggle()} />
   <nav
     class="fixed flex flex-col top-0 left-0 h-full py-4 border-r bg-white
-    dark:bg-gray-900 z-10 overflow-y-auto w-56 shadow"
+    dark:bg-gray-900 z-30 overflow-y-auto w-56 shadow"
     transition:fly={{ x: -250, opacity: 1, duration: 300 }}>
     {#if $darkMode}
       <button

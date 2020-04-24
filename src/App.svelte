@@ -10,11 +10,15 @@
   import BlogPosts from "./pages/BlogPosts.svelte";
   import ParallelCompression from "./pages/ParrallelCompression.svelte";
   import NotFound from "./pages/NotFound.svelte";
+  import RMS from "./pages/RMS.svelte";
+  import Synth from "./pages/Synth.svelte";
 
   const routes = {
     "/": Home,
     "/posts": BlogPosts,
     "/posts/parallel-compression": ParallelCompression,
+    "/posts/rms": RMS,
+    "/posts/synth": Synth,
     "*": NotFound
   };
 

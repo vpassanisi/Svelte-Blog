@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { parse } from "../components/ParsingFuncs.svelte";
+  import { parse } from "../modules/ParsingFuncs.svelte";
   import { media } from "../stores/watchMedia.js";
 
   onMount(async () => {
