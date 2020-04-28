@@ -7,11 +7,11 @@
 
 <style>
   .bg-img {
-    background-image: url("https://source.unsplash.com/4O1e7F2qjGM/1600x700");
+    background-image: url("https://source.unsplash.com/9bLhuTk4TJs/1600x900");
   }
 </style>
 
 <div
-  class={`bg-img ${$media.lg ? 'bg-fixed' : ''} bg-cover bg-no-repeat bg-right-bottom w-full h-50vh`} />
+  class={`bg-img ${$media.lg ? 'bg-fixed' : ''} bg-cover bg-no-repeat bg-center-bottom w-full h-50vh`} />
 <div id="post" class="dark:text-white mx-auto py-24 w-90p max-w-screen-lg" />
 <PlayerAnalyzer />

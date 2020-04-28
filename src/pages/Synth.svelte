@@ -2,6 +2,7 @@
   import { RangeKnob } from "../modules/Knob.svelte";
   import { onMount } from "svelte";
   import Tone from "tone";
+  import { media } from "../stores/watchMedia.js";
 
   // Knobs vars
   let oscAFrequencyKnob;
@@ -363,7 +364,14 @@
   .min-content {
     min-width: fit-content;
   }
+
+  .bg-img {
+    background-image: url("https://source.unsplash.com/5AlEtKAqTls/1600x900");
+  }
 </style>
+
+<div
+  class={`bg-img ${$media.lg ? 'bg-fixed' : ''} bg-cover bg-no-repeat bg-center w-full h-50vh`} />
 
 <div class="border-2 rounded mt-24 p-4 max-w-screen-md mx-auto min-content">
   <div

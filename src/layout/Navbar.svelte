@@ -31,7 +31,7 @@
       class="block h-full px-4 dark:text-white text-2xl font-hairline
       focus:outline-none"
       on:click={() => push('/')}>
-      Audio Blog
+      Third Sound
     </button>
     <div class="h-full">
       {#if $media.lg}
