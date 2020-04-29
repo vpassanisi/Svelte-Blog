@@ -25,7 +25,7 @@
 
 <div
   class={`flex justify-center items-center w-screen max-w-full border-b border-gray-600 bg-white
-  dark:bg-gray-900 ${scroll > 0 ? 'h-12' : 'h-24'} fixed transition-height duration-500 ease-in-out will-change-height`}>
+  dark:bg-gray-900 ${scroll > 0 ? 'h-12' : 'h-24'} fixed transition-height duration-500 ease-in-out will-change-height z-10`}>
   <div class="flex items-center justify-between h-full max-w-screen-lg w-90p">
     <button
       class="block h-full px-4 dark:text-white text-2xl font-hairline

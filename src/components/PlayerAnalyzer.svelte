@@ -31,11 +31,11 @@
   let testVar = 50;
   let scale;
   let fft;
-  let bin = 1024;
-  let fftNode = new Tone.Analyser("fft", bin);
+  let bin = [8192, 8, 4];
+  let fftNode = new Tone.Analyser("fft", bin[0]);
   let fftArr = [];
 
-  while (fftArr.length < bin) {
+  while (fftArr.length < bin[0]) {
     fftArr.push(0);
   }
 
@@ -63,6 +63,7 @@
     meterL.smoothing = 1 - calcSmoothing(smoothing) / 100;
     meterR.smoothing = 1 - calcSmoothing(smoothing) / 100;
     fftNode.smoothing = 1 - calcSmoothing(smoothing) / 100;
+    fftNode.size = bin[0];
 
     rmsL = meterL.getLevel();
     if (rmsL < -60) rmsL = -60;
@@ -83,8 +84,8 @@
 
     const arr = fftNode.getValue();
     let logArr = [];
-    for (let i = 0; i < arr.length; i++) {
-      const logindex = toLog(i, 1, bin);
+    for (let i = bin[2]; i < arr.length; i += bin[1]) {
+      const logindex = toLog(i, bin[2], bin[0]);
       const low = Math.floor(logindex);
       const high = Math.ceil(logindex);
       const lv = Math.abs(arr[low]);
@@ -182,9 +183,7 @@
   });
 </script>
 
-<div
-  class="min-content mx-auto flex flex-col items-center justify-center border-2
-  rounded py-4 px-2">
+<div class="flex flex-col border-2 rounded py-4 px-2 overflow-x-auto">
   <div class="flex flex-wrap items-center justify-center">
     <div
       class="flex flex-row items-center justify-center border-2 rounded h-12
@@ -244,7 +243,7 @@
   </div>
 
   <div>
-    <div class="flex flex-row mb-2">
+    <div class="flex flex-row overflow-x-auto mb-2">
       <div class="border-2 rounded mr-2">
         <div id="FFT" />
       </div>
@@ -289,16 +288,28 @@
       </div>
     </div>
 
-    <div class="border-2 rounded p-2 mb-2 w-1/2 mx-auto">
-      <span class="dark:text-white">
-        Smoothing: {1 - calcSmoothing(smoothing) / 100}
-      </span>
-      <input
-        class="w-full transform rotate-180"
-        bind:value={smoothing}
-        min="0"
-        max="99"
-        type="range" />
+    <div class="flex flex-row items-center justify-center w-full h-24">
+      <div class="border-2 rounded p-2 mr-2 w-2/4 flex flex-col">
+        <span class="dark:text-white">
+          Smoothing: {(1 - calcSmoothing(smoothing) / 100).toPrecision(3)}
+        </span>
+        <input
+          class="w-full transform rotate-180"
+          bind:value={smoothing}
+          min="0"
+          max="99"
+          type="range" />
+      </div>
+      <div class="border-2 rounded p-2 flex flex-col w-1/4">
+        <div class="dark:text-white">FFT Depth:</div>
+        <select id="bin-depth" bind:value={bin}>
+          <option value={[1024, 1, 1]}>1024</option>
+          <option value={[2048, 2, 1]}>2048</option>
+          <option selected="selected" value={[4096, 4, 2]}>4096</option>
+          <option value={[8192, 8, 4]}>8192</option>
+          <option value={[16384, 16, 8]}>16384</option>
+        </select>
+      </div>
     </div>
   </div>
 
