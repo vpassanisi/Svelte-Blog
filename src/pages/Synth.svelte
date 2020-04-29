@@ -4,7 +4,18 @@
   import { onMount } from "svelte";
   import { parse } from "../modules/ParsingFuncs.svelte";
 
-  onMount(async () => {});
+  onMount(async () => {
+    const req = await fetch(
+      "https://raw.githubusercontent.com/vpassanisi/Blog-Posts/master/Synth.txt",
+      {
+        method: "GET"
+      }
+    );
+
+    const res = await req.text();
+
+    parse(res);
+  });
 </script>
 
 <style>
