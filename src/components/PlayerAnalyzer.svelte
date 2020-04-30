@@ -183,7 +183,7 @@
   });
 </script>
 
-<div class="flex flex-col border-2 rounded py-4 px-2 overflow-x-auto">
+<div class="flex flex-col">
   <div class="flex flex-wrap items-center justify-center">
     <div
       class="flex flex-row items-center justify-center border-2 rounded h-12
@@ -243,52 +243,56 @@
   </div>
 
   <div>
-    <div class="flex flex-row overflow-x-auto mb-2">
-      <div class="border-2 rounded mr-2">
-        <div id="FFT" />
-      </div>
-      <div class="border-2 rounded p-2">
-        <div class="flex flex-row">
-          <div
-            class="dark:text-white flex flex-col items-center justify-between
-            -mt-2 -mb-2">
-            <small>0</small>
-            <small>3</small>
-            <small>6</small>
-            <small>9</small>
-            <small>12</small>
-            <small>15</small>
-            <small>18</small>
-            <small>21</small>
-            <small>25</small>
-            <small>27</small>
-            <small>30</small>
-            <small>33</small>
-            <small>36</small>
-            <small>39</small>
-            <small>42</small>
-            <small>45</small>
-            <small>48</small>
-            <small>51</small>
-            <small>54</small>
-            <small>57</small>
-            <small>60</small>
-          </div>
-          <div id="scale" class="inline-block mx-1" />
-          <div id="graph" class="inline-block w-full" />
+    <div class="flex flex-row items-center justify-center">
+      <div class="flex flex-row overflow-x-auto mb-2">
+        <div class="border-2 rounded mr-2">
+          <div id="FFT" />
         </div>
-        <div class="flex ml-6">
-          <div class="dark:text-white w-1/2 text-center">
-            {rmsL.toPrecision(3)}
+        <div class="border-2 rounded p-2">
+          <div class="flex flex-row">
+            <div
+              class="dark:text-white flex flex-col items-center justify-between
+              -mt-2 -mb-2">
+              <small>0</small>
+              <small>3</small>
+              <small>6</small>
+              <small>9</small>
+              <small>12</small>
+              <small>15</small>
+              <small>18</small>
+              <small>21</small>
+              <small>25</small>
+              <small>27</small>
+              <small>30</small>
+              <small>33</small>
+              <small>36</small>
+              <small>39</small>
+              <small>42</small>
+              <small>45</small>
+              <small>48</small>
+              <small>51</small>
+              <small>54</small>
+              <small>57</small>
+              <small>60</small>
+            </div>
+            <div id="scale" class="inline-block mx-1" />
+            <div id="graph" class="inline-block w-full" />
           </div>
-          <div class="dark:text-white w-1/2 text-center">
-            {rmsR.toPrecision(3)}
+          <div class="flex ml-6">
+            <div class="dark:text-white w-1/2 text-center">
+              {rmsL.toPrecision(3)}
+            </div>
+            <div class="dark:text-white w-1/2 text-center">
+              {rmsR.toPrecision(3)}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-row items-center justify-center w-full h-24">
+    <div
+      class="flex flex-row items-center justify-center w-full h-24
+      max-w-screen-lg mx-auto">
       <div class="border-2 rounded p-2 mr-2 w-2/4 flex flex-col">
         <span class="dark:text-white">
           Smoothing: {(1 - calcSmoothing(smoothing) / 100).toPrecision(3)}

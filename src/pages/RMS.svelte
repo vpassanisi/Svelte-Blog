@@ -1,8 +1,21 @@
 <script>
   import { media } from "../stores/watchMedia.js";
-  import Player from "../components/Player.svelte";
+  import { onMount } from "svelte";
+  import { parse } from "../modules/ParsingFuncs.svelte";
   import PlayerAnalyzer from "../components/PlayerAnalyzer.svelte";
-  import P5test from "../components/P5Test.svelte";
+
+  onMount(async () => {
+    const req = await fetch(
+      "https://raw.githubusercontent.com/vpassanisi/Blog-Posts/master/Metering%20and%20RMS.txt",
+      {
+        method: "GET"
+      }
+    );
+
+    const res = await req.text();
+
+    parse(res);
+  });
 </script>
 
 <style>
