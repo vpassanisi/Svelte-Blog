@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import { media } from "./watchMedia.js";
 
 const dark = () => {
   const { subscribe, set, update } = writable(false);
